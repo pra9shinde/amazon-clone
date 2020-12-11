@@ -1,0 +1,18 @@
+.notification {
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.notification.red {
+    background-color: lightcoral;
+}
+
+.notification.green {
+    background-color: #59b359;
+}
+
+.notification > p {
+    color: #ffffff;
+    padding: 10px 25px;
+}

@@ -5,8 +5,6 @@ import './Product.css';
 const Product = ({ id, title, image, price, rating }) => {
     const [{ basket }, dispatch] = useStateValue();
 
-    console.log('Basket >>>>>', basket);
-
     const addToBasket = () => {
         // dispatch
         dispatch({
@@ -32,7 +30,7 @@ const Product = ({ id, title, image, price, rating }) => {
                 <div className='product__rating'>
                     {Array(rating)
                         .fill()
-                        .map((index, value) => (
+                        .map((value, index) => (
                             <p key={index}>⭐</p>
                         ))}
                 </div>

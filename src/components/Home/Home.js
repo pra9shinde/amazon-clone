@@ -24,7 +24,7 @@ const Home = () => {
                         id='101'
                         title='Samsung Galaxy A51 (Blue, 6GB RAM, 128GB Storage) with No Cost EMI/Additional Exchange Offers'
                         image='https://images-na.ssl-images-amazon.com/images/I/81qVoEhymIL._SL1500_.jpg'
-                        price='22,999'
+                        price='22999'
                         rating={4}
                     />
                 </div>
@@ -34,14 +34,14 @@ const Home = () => {
                         id='102'
                         title='HP 410 All-in-One Wireless Ink Tank Color Printer with Voice-Activated Printing(Works with Alexa and Google Voice- Assistant) '
                         image='https://images-na.ssl-images-amazon.com/images/I/612SY5kuGBL._SL1500_.jpg'
-                        price='12,499'
+                        price='12499'
                         rating={3}
                     />
                     <Product
                         id='103'
                         title='Seagate Backup Plus Portable 5 TB External HDD – USB 3.0 for Windows and Mac, 3 yr Data Recovery Services, Portable Hard Drive – Black with 4 Months Adobe CC Photography (STHP5000400)'
                         image='https://images-na.ssl-images-amazon.com/images/I/91zYlmkap9L._SL1500_.jpg'
-                        price='8,999'
+                        price='8999'
                         rating={5}
                     />
                     <Product
