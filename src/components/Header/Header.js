@@ -27,17 +27,19 @@ const Header = () => {
             </div>
 
             <div className='header__nav'>
-                <Link to='/login' style={{ textDecoration: 'none' }}>
+                <Link to='/login' style={{ textDecoration: 'none', outline: 'none' }}>
                     <div className='header__option' onClick={handleAuthentication}>
                         <span className='header__optionLineOne'>Hello {state.user ? state.user.email : 'user'}</span>
                         <span className='header__optionLineTwo'>{state.user ? 'Sign out' : 'Sign in'}</span>
                     </div>
                 </Link>
 
-                <div className='header__option'>
-                    <span className='header__optionLineOne'>Returns</span>
-                    <span className='header__optionLineTwo'>& Orders</span>
-                </div>
+                <Link to='/orders' style={{ textDecoration: 'none', outline: 'none' }}>
+                    <div className='header__option'>
+                        <span className='header__optionLineOne'>Returns</span>
+                        <span className='header__optionLineTwo'>& Orders</span>
+                    </div>
+                </Link>
                 <div className='header__option'>
                     <span className='header__optionLineOne'>Your</span>
                     <span className='header__optionLineTwo'>Prime</span>

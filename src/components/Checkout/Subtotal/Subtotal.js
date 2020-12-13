@@ -4,9 +4,18 @@ import './Subtotal.css';
 import CurrencyFormat from 'react-currency-format';
 import { useStateValue } from '../../../contextAPI/StateProvider';
 import { getBasketTotal } from '../../../contextAPI/reducer';
+import { useHistory } from 'react-router';
 
 const Subtotal = () => {
-    const [{ basket }, dispatch] = useStateValue();
+    const [{ basket, user }, dispatch] = useStateValue();
+    const history = useHistory();
+    let proceedBtn = <button onClick={(e) => history.push('/payment')}>Proceed to checkout</button>;
+    if (getBasketTotal(basket) <= 0) {
+        proceedBtn = <button disabled>Proceed to checkout</button>;
+    }
+    if (!user) {
+        proceedBtn = <button disabled>Sign in to continue</button>;
+    }
 
     return (
         <div className='subtotal'>
@@ -27,7 +36,7 @@ const Subtotal = () => {
                 thousandSeparator={true}
                 prefix={'₹'}
             />
-            <button>Proceed to checkout</button>
+            {proceedBtn}
         </div>
     );
 };

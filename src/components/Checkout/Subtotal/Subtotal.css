@@ -27,4 +27,11 @@
     border: 1px solid;
     border-color: #a88734 #9c7e31 #846a29;
     color: #111111;
+    cursor: pointer;
+}
+
+.subtotal > button:disabled {
+    background-color: darkgray;
+    border-color: darkgray;
+    cursor: not-allowed;
 }
