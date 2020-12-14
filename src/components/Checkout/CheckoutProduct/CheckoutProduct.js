@@ -2,11 +2,14 @@ import React from 'react';
 import './CheckoutProduct.css';
 
 import { useStateValue } from '../../../contextAPI/StateProvider';
+import { toast } from 'react-toastify';
 
 const CheckoutProduct = ({ id, image, title, price, rating, hideBtn }) => {
     const [{ basket }, dispatch] = useStateValue();
 
     const removeFromBasket = () => {
+        toast.dark('Product removed successfully !');
+
         dispatch({
             type: 'REMOVE_FROM_BASKET',
             id: id,

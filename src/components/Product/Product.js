@@ -2,6 +2,8 @@ import React from 'react';
 import { useStateValue } from '../../contextAPI/StateProvider';
 import './Product.css';
 
+import { toast } from 'react-toastify';
+
 const Product = ({ id, title, image, price, rating }) => {
     const [{ basket }, dispatch] = useStateValue();
 
@@ -17,6 +19,7 @@ const Product = ({ id, title, image, price, rating }) => {
                 rating: rating,
             },
         });
+        toast.dark('Product added successfully !');
     };
 
     return (

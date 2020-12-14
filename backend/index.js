@@ -20,6 +20,9 @@ app.post('/payments/create', async (req, res) => {
         currency: 'inr',
     });
 
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+
     res.status(201).send({
         clientSecret: paymentIntent.client_secret,
     });
@@ -29,6 +32,6 @@ app.get('/', (req, res) => {
     res.status(200).send('Testing Express Server');
 });
 
-app.listen(4000, () => {
-    console.log('listening port 4000');
+app.listen(process.env.PORT || 3000, () => {
+    console.log('listening.....');
 });

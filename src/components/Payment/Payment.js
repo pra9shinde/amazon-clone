@@ -6,6 +6,7 @@ import { useStateValue } from '../../contextAPI/StateProvider';
 import CheckoutProduct from '../Checkout/CheckoutProduct/CheckoutProduct';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import CurrencyFormat from 'react-currency-format';
+import { toast } from 'react-toastify';
 import { getBasketTotal } from '../../contextAPI/reducer';
 import axios from '../../axios';
 import { db } from '../../firebase';
@@ -51,8 +52,13 @@ const Payment = () => {
                 dispatch({
                     type: 'EMPTY_BASKET',
                 });
+                toast.dark('Order placed successfully !');
 
                 history.replace('/orders');
+            })
+            .catch((e) => {
+                alert('Error Occured handle payment, check console');
+                console.log(e);
             });
     };
 
@@ -62,18 +68,23 @@ const Payment = () => {
     };
 
     useEffect(() => {
-        // Generate stripeSecret
-        const getClientSecret = async () => {
-            const response = await axios({
-                method: 'post',
-                url: `/payments/create?total=${getBasketTotal(basket)}`,
-            });
+        try {
+            // Generate stripeSecret key
+            const getClientSecret = async () => {
+                const response = await axios({
+                    method: 'post',
+                    url: `/payments/create?total=${getBasketTotal(basket)}`,
+                });
 
-            setClientSecret(response.data.clientSecret);
-        };
+                setClientSecret(response.data.clientSecret);
+            };
 
-        getClientSecret();
-    }, [basket]);
+            getClientSecret();
+        } catch (error) {
+            alert('Error Occured in useEffect, check console');
+            console.log(error);
+        }
+    }, []);
 
     console.log('SecretKey >>>>>>>>> ' + clientSecret);
 
@@ -99,8 +110,16 @@ const Payment = () => {
                         <h3>Review items & Delivery</h3>
                     </div>
                     <div className='payment__items'>
-                        {basket.map((item) => (
-                            <CheckoutProduct id={item.id} title={item.title} image={item.image} price={item.price} rating={item.rating} />
+                        {basket.map((item, index) => (
+                            <CheckoutProduct
+                                key={index}
+                                id={item.id}
+                                title={item.title}
+                                image={item.image}
+                                price={item.price}
+                                rating={item.rating}
+                                hideBtn
+                            />
                         ))}
                     </div>
                 </div>
