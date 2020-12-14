@@ -72,3 +72,77 @@
 .header__optionBasket .header__basketCount {
     margin-left: 3px;
 }
+
+.header__mobileMenuIcon .MuiSvgIcon-root {
+    color: #ffffff;
+    display: none;
+}
+
+.header__mobileNav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: #131921;
+    padding: 10px 20px;
+    height: 100%;
+    color: #ffffff;
+    min-width: 200px;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    z-index: 105;
+}
+
+.header__mobileNav.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.header__mobileNav .header__option {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #f0c14b;
+    padding-bottom: 5px;
+}
+
+.header__MobileNav__container {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.header__closeIcon .MuiSvgIcon-root {
+    color: #ffffff;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .header__mobileMenuIcon .MuiSvgIcon-root {
+        display: block;
+    }
+
+    .header__nav {
+        display: none;
+    }
+
+    .header .header__logo {
+        width: 70px;
+    }
+
+    .header__searchInput {
+        height: 25px;
+        max-width: 150px;
+    }
+
+    .header__searchIcon.MuiSvgIcon-root {
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .header__optionBasket {
+        margin-right: 0;
+    }
+}

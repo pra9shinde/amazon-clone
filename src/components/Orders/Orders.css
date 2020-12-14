@@ -5,3 +5,16 @@
 .orders > h1 {
     margin: 30px 0;
 }
+
+@media screen and (max-width: 768px) {
+    .orders {
+        padding: 20px 30px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .orders {
+        padding: 20px 20px;
+    }
+}

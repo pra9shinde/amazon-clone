@@ -15,3 +15,26 @@
     font-weight: 500;
     text-align: right;
 }
+
+@media screen and (max-width: 768px) {
+    .order {
+        padding: 30px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .order {
+        padding: 20px;
+    }
+
+    .order > h2 {
+        display: inline-block;
+    }
+
+    .order__id {
+        position: static;
+        margin-bottom: 6px;
+        display: inline-block;
+        margin-left: 5px;
+    }
+}

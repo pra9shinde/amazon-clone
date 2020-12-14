@@ -29,7 +29,7 @@ const Home = () => {
                     />
                 </div>
 
-                <div className='home__row'>
+                <div className='home__row three_rows'>
                     <Product
                         id='102'
                         title='HP 410 All-in-One Wireless Ink Tank Color Printer with Voice-Activated Printing(Works with Alexa and Google Voice- Assistant) '

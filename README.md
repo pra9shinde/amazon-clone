@@ -37,7 +37,6 @@ $ npm start
 ### Todos
 
 -   Dynamic Comments & Ratings
--   Mobile responsive
 -   Fetch products from DB
 -   Working search bar
 

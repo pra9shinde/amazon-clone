@@ -46,3 +46,36 @@
     cursor: pointer;
     outline: 0;
 }
+
+@media screen and (max-width: 768px) {
+    .product .product__info {
+        font-size: 14px;
+    }
+
+    .product > img {
+        max-height: 125px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .product {
+        margin: 5px;
+        padding: 10px;
+    }
+
+    .product .product__info {
+        font-size: 12px;
+    }
+
+    .product > img {
+        max-height: 100px;
+    }
+
+    .product .product__btn {
+        padding: 4px 10px;
+    }
+
+    .header__searchInput {
+        max-width: 100px;
+    }
+}

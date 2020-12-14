@@ -33,3 +33,16 @@
     font-size: 17px;
     font-weight: 800;
 }
+
+@media screen and (max-width: 768px) {
+    .checkoutProduct__image {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .checkoutProduct__title {
+        font-size: 14px;
+    }
+}
