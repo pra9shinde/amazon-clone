@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)]()
 
+Live Demo - [Amazon clone](https://clone-b05d5.firebaseapp.com/)
+
 Amazon Clone is a simple amazon clone build using react and firebase. NodeJS is used for stripe payments
 
 -   Authentication
